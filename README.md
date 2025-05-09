@@ -63,7 +63,7 @@ pip install --pre openvino openvino-tokenizers openvino-genai --extra-index-url 
   
 <p class="has-line-data" data-line-start="38" data-line-end="42">Download and install the Models:<br>
   
-cd Models<br>
+cd Intellexia/Models<br>
 
 optimum-cli export openvino -m meta-llama/Llama-3.1-8B-Instruct --weight-format int4 --sym --ratio 1.0 --group-size -1 Llama-3.1-8B-Instruct<br>
 
