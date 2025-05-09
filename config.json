@@ -1,0 +1,9 @@
+{
+    "BotName": "Intellexia",
+    "UserName": "User",
+    "Model": "Llama-3.1-8B-Instruct",
+    "LoraModel": "dreamlike_anime_1_0_ov/FP16",
+    "systemPrompt": "You are Intellexia, a helpfully and lovely assistant",
+    "LLMDevice": "NPU",
+    "LoraDevice": "GPU"
+}
