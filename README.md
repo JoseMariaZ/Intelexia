@@ -1,4 +1,4 @@
-<p class="has-line-data" data-line-start="0" data-line-end="2">Intellexia is a simple python application to run Long Language Models inference on the NPU for Intel Core Ultra processors as Meteor Lake and Lunar Lake with Openvino.<br>
+<p class="has-line-data" data-line-start="0" data-line-end="2">Intelexia is a simple python application to run Long Language Models inference on the NPU for Intel Core Ultra processors as Meteor Lake and Lunar Lake with Openvino.<br>
 Enjoy the low power consumption and privacy to use your own language model locally without restrictions.</p>
 <p class="has-line-data" data-line-start="3" data-line-end="4">Tested only on Ubuntu 24.04 but should work on other distributions and also on Windows</p>
 <ul>
