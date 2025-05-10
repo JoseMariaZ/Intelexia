@@ -79,7 +79,7 @@ def chat():
             return
         config_llm = ov_genai.GenerationConfig(max_new_tokens=1024, top_k=50, top_p=0.9)
         pipe.start_chat()
-        outputBox.insert(tk.INSERT, "[+]Intellexia: ")
+        outputBox.insert(tk.INSERT, "[+]Intelexia: ")
         pipe.generate(prompt, config_llm, streamer)
         pipe.finish_chat()
         outputBox.configure(state=tk.DISABLED)
@@ -133,7 +133,7 @@ def launch_lora():
 ## Tkinter
 # Main Window
 window = tk.Tk()
-window.title("Intellexia-Free")
+window.title("Intelexia-Free")
 window.geometry("600x1024")
 window.configure(bg="#2a2d2e")
 window.iconphoto(False, tk.PhotoImage(file="robot.png"))
