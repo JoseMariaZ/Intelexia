@@ -45,7 +45,7 @@ sudo reboot</p>
   
 <p class="has-line-data" data-line-start="31" data-line-end="33">Clone the repository:<br>
   
-git clone <a href="https://github.com/JoseMariaZ/Intellexia.git">https://github.com/JoseMariaZ/Intellexia.git</a></p>
+git clone <a href="https://github.com/JoseMariaZ/Intelexia.git">https://github.com/JoseMariaZ/Intelexia.git</a></p> 
 
 </li>
 
