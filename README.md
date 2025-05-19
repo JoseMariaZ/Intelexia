@@ -33,7 +33,7 @@ wget <a href="https://github.com/intel/linux-npu-driver/releases/download/v1.13.
 wget <a href="https://github.com/intel/linux-npu-driver/releases/download/v1.13.0/intel-level-zero-npu_1.13.0.20250131-13074932693_ubuntu24.04_amd64.deb">https://github.com/intel/linux-npu-driver/releases/download/v1.13.0/intel-level-zero-npu_1.13.0.20250131-13074932693_ubuntu24.04_amd64.deb</a><br>
 wget <a href="https://github.com/oneapi-src/level-zero/releases/download/v1.18.5/level-zero_1.18.5+u24.04_amd64.deb">https://github.com/oneapi-src/level-zero/releases/download/v1.18.5/level-zero_1.18.5+u24.04_amd64.deb</a><br>
 
-sudo dpkg -i <em>.deb<br>
+sudo dpkg -i <em>*.deb<br>
 
 sudo bash -c &quot;echo 'SUBSYSTEM==“accel”, KERNEL==&quot;accel</em>“, GROUP=“render”, MODE=“0660”’ &gt; /etc/udev/rules.d/10-intel-vpu.rules”<br>
 
