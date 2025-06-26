@@ -24,6 +24,9 @@ with open("config.json", "r") as json_file:
     LLMDevice = config["LLMDevice"]
     LoraDevice = config["LoraDevice"]
 
+#History
+chat_history = []
+max_turns = 10
 
 # Exit
 def exit_app():
@@ -61,28 +64,35 @@ def update_output():
 
 # Chat with LLM
 def chat():
-    user_input = inputBox.get(1.0, tk.END)
-    if user_input is None:
+    user_input = inputBox.get(1.0, tk.END).strip()
+    if not user_input:
         return
     window.after(0, lambda: status.config(text="[+] Loading Inference...", bg="red"))
+
     def run():
+        global chat_history
         start_time = time.time()
         outputBox.configure(state=tk.NORMAL)
-        outputBox.insert(tk.INSERT, "\n")
-        outputBox.insert(tk.INSERT, "[-]"+UserName + ": ")
-        outputBox.insert(tk.INSERT, user_input)
+        outputBox.insert(tk.INSERT, "\n[-]" + UserName + ": " + user_input + "\n")
         outputBox.see('end')
         delete_input()
-        prompt = systemPrompt + user_input
-        if not prompt:
+        chat_history.append(f"{UserName}: {user_input}")
+        if len(chat_history) > max_turns * 2:
+            chat_history = chat_history[-max_turns * 2:]
+        full_prompt = systemPrompt + "\n" + "\n".join(chat_history)
+        if not full_prompt:
             window.after(0, lambda: status.config(text="[!] Please enter a prompt.", bg='red'))
             return
-        config_llm = ov_genai.GenerationConfig(max_new_tokens=1024, top_k=50, top_p=0.9)
+        config_llm = ov_genai.GenerationConfig(max_new_tokens=1024, top_k=0.7, top_p=0.9)
         pipe.start_chat()
-        outputBox.insert(tk.INSERT, "[+]Intelexia: ")
-        pipe.generate(prompt, config_llm, streamer)
+        outputBox.insert(tk.INSERT, "[+]" + BotName + ": ")
+        response = pipe.generate(full_prompt, config_llm, streamer)
         pipe.finish_chat()
+        outputBox.insert(tk.INSERT, response + "\n")
         outputBox.configure(state=tk.DISABLED)
+        chat_history.append(f"{BotName}: {response}")
+        if len(chat_history) > max_turns * 2:
+            chat_history = chat_history[-max_turns * 2:]
         end_time = time.time()
         execution_time = end_time - start_time
         window.after(0, lambda: status.config(text=f"[+] Inference Time: {execution_time:.2f} seconds", bg='green'))
