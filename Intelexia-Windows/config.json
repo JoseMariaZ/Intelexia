@@ -1,0 +1,9 @@
+{
+    "BotName": "Intellexia",
+    "UserName": "User",
+    "Model": "TinyLlama-1.1B-Chat-v1.0",
+    "LoraModel": "stable-diffusion-v1-5",
+    "systemPrompt": "You are Intellexia, a helpfully and lovely assistant",
+    "LLMDevice": "NPU",
+    "LoraDevice": "GPU"
+}

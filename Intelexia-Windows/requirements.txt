@@ -1,0 +1,21 @@
+# Intelexia Windows Requirements
+# Core dependencies
+numpy>=1.21.0
+Pillow>=8.0.0
+tkinter  # Usually included with Python
+
+# OpenVINO and AI dependencies
+nncf==2.14.1
+onnx==1.17.0
+optimum-intel==1.22.0
+
+# OpenVINO GenAI - stable version
+openvino==2025.2
+openvino-tokenizers==2025.2
+openvino-genai==2025.2
+
+# For pre-production/nightly builds, use instead:
+# --extra-index-url https://storage.openvinotoolkit.org/simple/wheels/nightly
+# openvino
+# openvino-tokenizers
+# openvino-genai
